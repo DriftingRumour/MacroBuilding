@@ -10,7 +10,7 @@ The format of which is
 (Active and Passive Perception Rolls for the whole party will output in a table in roll20 chat.)
   Then, Each Player gets a section:
 _______________________Macros for PLAYER1:
-  How they can implement OneDnD Exhaustion. 
+  How they can implement OneDnD Exhaustion. (Credit: Jarren on https://app.roll20.net/forum/post/11701939/tracking-onednd-exhaustion/)
   How to add general token macros, for attacks and the likes. (NOT THE HOTBAR ONES) -
 (THESE ARE INCREDIBLY USEFUL FOR NPC SHEETS so DM doesnt have to open up lots of C-sheets. the options only appear when the token is selected. )
   Then What Macro:
