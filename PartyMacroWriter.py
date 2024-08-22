@@ -13,6 +13,7 @@ def generate_macros(names):
         passive_macro += "}"
         active_macro += "}"
     ship_macro = "To add Quality Score, go to a ships token bars, instead of temp hp in the red bubble, assign it to the wisdom_mod attribute. \n In all rolls for the ship, have [[d20 + @{ wisdom_mod }]]. This makes the quality score changeable from the map token and used in everything."
+    initiative_macro = "@{(target|wtype}&{template:simple} {{rname=^{init-u}}} {{mod=@{target|initiative_bonus}}} {{r1=[[@{target|initiative_style}+@{target|initiative_bonus}@{target|pbd_safe}[INIT] &{tracker}]]}} {{normal=1}} @{target|charname_output}"
     return passive_macro, active_macro, ship_macro
 
 def main():
@@ -25,7 +26,7 @@ def main():
     player_names = [name.strip() for name in args.player_names.split(',')]
 
     # Generate macros
-    passive_macro, active_macro, ship_macro = generate_macros(player_names)
+    passive_macro, active_macro, ship_macro, initiative = generate_macros(player_names)
 
     # Define the new file name
     new_file_name = "GroupMacros.txt"
@@ -38,6 +39,8 @@ def main():
         file.write(active_macro + "\n\n")
         file.write("Ship Macro:\n")
         file.write(ship_macro + "\n\n")
+        file.write("Initiative Macro:\n")
+        file.write(initiative + "\n\n")
 
     # Call the script for each player name and append the result to the same file
     for name in player_names:
